@@ -1,11 +1,4 @@
-using Fhi.HelseId.Web.ExtensionMethods;
-
 var builder = WebApplication.CreateBuilder(args);
-
-var authBuilder = builder.AddHelseIdWebAuthentication()
-    .UseJwkKeySecretHandler()
-    .Build()
-    .AddOutgoingApiServices();
 
 // Add services to the container.
 
@@ -28,16 +21,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-if (authBuilder.HelseIdWebKonfigurasjon?.AuthUse ?? false)
-{
-    app.UseAuthentication();
-    app.UseAuthorization();
-}
-
 app.MapControllers();
 
 app.MapFallbackToFile("/index.html");
-
-
 
 app.Run();
