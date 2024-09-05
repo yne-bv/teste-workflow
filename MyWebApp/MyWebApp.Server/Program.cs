@@ -1,3 +1,5 @@
+using Fhi.HelseId.Web.ExtensionMethods;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +8,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+var authBuilder = builder.AddHelseIdWebAuthentication()
+    .UseJwkKeySecretHandler()
+    .Build();
 
 var app = builder.Build();
 
@@ -20,6 +25,14 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+if (authBuilder.HelseIdWebKonfigurasjon?.AuthUse ?? false)
+{
+    app.UseAuthentication();
+    app.UseAuthorization();
+}
+
+app.UseHelseIdProtectedPaths();
 
 app.MapControllers();
 
