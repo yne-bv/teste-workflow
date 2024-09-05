@@ -1,6 +1,11 @@
-using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Fhi.HelseId.Web.ExtensionMethods;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var authBuilder = builder.AddHelseIdWebAuthentication()
+    .UseJwkKeySecretHandler()
+    .Build()
+    .AddOutgoingApiServices();
 
 // Add services to the container.
 
@@ -11,11 +16,8 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.UseHttpsRedirection();
 app.UseDefaultFiles();
 app.UseStaticFiles();
-app.UseRouting();
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -24,35 +26,18 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseHttpsRedirection();
 
-
-
-app.UseAuthorization();
-
-app.UseEndpoints(endpoints =>
+if (authBuilder.HelseIdWebKonfigurasjon?.AuthUse ?? false)
 {
-    endpoints.MapControllers();
-});
+    app.UseAuthentication();
+    app.UseAuthorization();
+}
 
-app.UseSpa(spa =>
-{
-    // To learn more about options for serving an Angular SPA from ASP.NET Core,
-    // see https://go.microsoft.com/fwlink/?linkid=864501
+app.MapControllers();
 
-    spa.Options.SourcePath = "ClientApp/";
-    spa.Options.StartupTimeout = new TimeSpan(0, 5, 0);
-    spa.Options.DefaultPageStaticFileOptions = new StaticFileOptions()
-    {
-        OnPrepareResponse = ctx =>
-        {
-            ctx.Context.Response.Headers.CacheControl = "no-cache, no-store";
-            ctx.Context.Response.Headers.Pragma = "no-cache";
-            ctx.Context.Response.Headers.Expires = "-1";
-        }
-    };
-    if (app.Environment.IsDevelopment())
-    {
-        spa.UseAngularCliServer("start");
-    }
-});
+app.MapFallbackToFile("/index.html");
+
+
+
 app.Run();

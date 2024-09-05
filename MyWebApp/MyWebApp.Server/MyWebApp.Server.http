@@ -1,6 +1,6 @@
-# @MyWebApp.Server_HostAddress = http://localhost:5278
+@MyWebApp.Server_HostAddress = http://localhost:5082
 
-# GET {{MyWebApp.Server_HostAddress}}/weatherforecast/
-# Accept: application/json
+GET {{MyWebApp.Server_HostAddress}}/weatherforecast/
+Accept: application/json
 
 ###
