@@ -14,8 +14,11 @@ var authBuilder = builder.AddHelseIdWebAuthentication()
 
 var app = builder.Build();
 
+
+
 app.UseDefaultFiles();
 app.UseStaticFiles();
+app.UseHttpsRedirection();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -24,8 +27,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
 
+app.UseCors(b => b
+    .AllowAnyOrigin()
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+);
 if (authBuilder.HelseIdWebKonfigurasjon?.AuthUse ?? false)
 {
     app.UseAuthentication();
