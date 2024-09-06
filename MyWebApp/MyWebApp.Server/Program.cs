@@ -8,17 +8,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-//var authBuilder = builder.AddHelseIdWebAuthentication()
-//    .UseJwkKeySecretHandler()
-//    .Build();
+var authBuilder = builder.AddHelseIdWebAuthentication()
+    .UseJwkKeySecretHandler()
+    .Build();
 
 var app = builder.Build();
-
-
-
-app.UseDefaultFiles();
-app.UseStaticFiles();
-app.UseHttpsRedirection();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -27,13 +21,17 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-//if (authBuilder.HelseIdWebKonfigurasjon?.AuthUse ?? false)
-//{
-//    app.UseAuthentication();
-//}
-    app.UseAuthorization();
+app.UseHttpsRedirection();
 
-//app.UseHelseIdProtectedPaths();
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.UseHelseIdProtectedPaths();
 
 app.MapControllers();
 

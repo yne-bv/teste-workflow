@@ -12,11 +12,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="8.0.8" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
-    <PackageReference Include="Fhi.HelseId.Web" Version="6.0.0" />
     <PackageReference Include="Fhi.AuthControllers" Version="*" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\fhi.helseid\Fhi.HelseId.Web\Fhi.HelseId.Web.csproj" />
     <ProjectReference Include="..\MyWebApp.Client\MyWebApp.Client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
