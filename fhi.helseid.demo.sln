@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWebApp2.Server", "MyWebAp
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "MyWebApp.Client", "MyWebApp\MyWebApp.Client\MyWebApp.Client.esproj", "{47475081-C65B-46D0-86B6-B676B08F1BEF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fhi.HelseId.Web", "..\fhi.helseid\Fhi.HelseId.Web\Fhi.HelseId.Web.csproj", "{1BC103E4-C8CE-4D25-AAB0-A322D70C153F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fhi.AuthControllers", "..\fhi.helseid\Fhi.AccountController\Fhi.AuthControllers.csproj", "{013DBE71-2260-489F-9A2C-43823F3E29BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,14 @@ Global
 		{47475081-C65B-46D0-86B6-B676B08F1BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47475081-C65B-46D0-86B6-B676B08F1BEF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{47475081-C65B-46D0-86B6-B676B08F1BEF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1BC103E4-C8CE-4D25-AAB0-A322D70C153F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BC103E4-C8CE-4D25-AAB0-A322D70C153F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BC103E4-C8CE-4D25-AAB0-A322D70C153F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BC103E4-C8CE-4D25-AAB0-A322D70C153F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{013DBE71-2260-489F-9A2C-43823F3E29BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{013DBE71-2260-489F-9A2C-43823F3E29BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{013DBE71-2260-489F-9A2C-43823F3E29BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{013DBE71-2260-489F-9A2C-43823F3E29BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
