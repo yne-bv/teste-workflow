@@ -19,8 +19,8 @@ jobs:
       with:
         dotnet-version: '9.x'
     - name: Restore dependencies
-      run: dotnet restore --project MyWebApp/MyWebApp.sln
+      run: dotnet restore MyWebApp/MyWebApp.sln
     - name: Build
-      run: dotnet build --no-restore --project MyWebApp/MyWebApp.sln
+      run: dotnet build MyWebApp/MyWebApp.sln --no-restore 
     - name: Test
-      run: dotnet test --no-build --project MyWebApp/MyWebApp.sln
+      run: dotnet test MyWebApp/MyWebApp.sln --no-build
