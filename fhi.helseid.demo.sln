@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MyWebApp", "MyWebApp", "{6CD22EB3-46BE-4A06-B0A5-6499F739C859}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWebApp.Server", "MyWebApp\mywebapp.server\MyWebApp.Server.csproj", "{A7FB1242-86BB-49A2-8025-FE742D4D495A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWebApp.Server", "MyWebApp\MyWebApp.Server\MyWebApp.Server.csproj", "{A7FB1242-86BB-49A2-8025-FE742D4D495A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApi", "MyApi\MyApi.csproj", "{B546E21F-5378-4EF1-97C8-348E1DCBE004}"
 EndProject
