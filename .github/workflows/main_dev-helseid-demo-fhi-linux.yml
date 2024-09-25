@@ -19,8 +19,7 @@ jobs:
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '9.0.0-preview.6.24327.7'
-          include-prerelease: true
+          dotnet-version: '9.0.100-rc.1.24452.12'
 
       - name: Build with dotnet
         run: dotnet build MyWebApp/MyWebApp.Server/MyWebApp.Server.csproj --configuration Release
