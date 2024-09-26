@@ -7,7 +7,6 @@
     <SpaRoot>..\MyWebApp.Client</SpaRoot>
     <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
     <SpaProxyServerUrl>https://localhost:4200</SpaProxyServerUrl>
-    <PublishSingleFile>true</PublishSingleFile>
     <ContainterBaseImage>mcr.microsoft.com/dotnet/aspnet:9.0-preview</ContainterBaseImage>
   </PropertyGroup>
 
